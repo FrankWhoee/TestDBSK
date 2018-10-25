@@ -3,6 +3,7 @@ package bot.discord.dbsk;
 import discord.Constants;
 import discord.Discord;
 import discord.Music;
+import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
 
@@ -62,6 +63,8 @@ public class App
     public static void messageEvent(MessageReceivedEvent evt) {
     	//When a message is sent, this method will be called.
     	//evt contains all the information you need about the message.
+        Message objMsg = evt.getMessage();
+        System.out.println(objMsg.getContentRaw());
     }
     
     public static void emojiEvent(MessageReactionAddEvent evt) {
